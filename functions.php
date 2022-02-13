@@ -1,4 +1,34 @@
 <?php
+//author情報からユーザー名の特定防止
+function disable_author_archive_query() {
+	if( preg_match('/author=([0-9]*)/i', $_SERVER['QUERY_STRING']) ){
+		wp_redirect( home_url() );
+		exit;
+	}
+}
+add_action('init', 'disable_author_archive_query');
+
+//WordPress REST API によるユーザー情報特定防止
+function majime_filter_rest_endpoints( $endpoints ) {
+    /* REST APIで投稿一覧取得を無効にする */
+    if ( isset( $endpoints['/wp/v2/posts'] ) ) {
+        unset( $endpoints['/wp/v2/posts'] );
+    }
+    /* REST APIで投稿記事取得（単記事）を無効にする */
+    if ( isset( $endpoints['/wp/v2/posts/(?P<id>[d]+)'] ) ) {
+        unset( $endpoints['/wp/v2/posts/(?P<id>[d]+)'] );
+    }
+    /* REST APIでユーザー情報取得を無効にする */
+    if ( isset( $endpoints['/wp/v2/users'] ) ) {
+        unset( $endpoints['/wp/v2/users'] );
+    }
+    if ( isset( $endpoints['/wp/v2/users/(?P<id>[d]+)'] ) ) {
+        unset( $endpoints['/wp/v2/users/(?P<id>[d]+)'] );
+    }
+    return $endpoints;
+}
+add_filter( 'rest_endpoints', 'majime_filter_rest_endpoints', 10, 1 );
+
 // アイキャッチ設定
 add_theme_support('post-thumbnails');
 
