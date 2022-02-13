@@ -1,0 +1,53 @@
+.p-concept {
+	max-width: 700px;
+}
+
+.p-concept-typo {
+	padding: rem(32);
+	text-align: center;
+	img {
+		height: rem(250);
+		@include mq(sm) {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.p-concept-message {
+	p {
+		line-height: 1.5;
+		margin-bottom: rem(24);
+		font-size: rem(17);
+		letter-spacing: rem(2);
+		@include mq(sm) {
+			font-size: rem(15);
+		}
+	}
+}
+
+.p-concept-start {
+	text-align: left;
+	p {
+		line-height: 1.5;
+		font-size: rem(17);
+		@include mq(sm) {
+			font-size: rem(15);
+		}
+	}
+}
+
+.p-concept-end {
+	text-align: right;
+	p {
+		line-height: 1.5;
+		font-size: rem(17);
+		@include mq(sm) {
+			font-size: rem(15);
+		}
+	}
+}
+
+.p-concept-en {
+	font-family: $en-font-family-text;
+}

@@ -1,0 +1,64 @@
+.p-mv {
+	width: 100%;
+	padding: 0 rem(32);
+	margin: 0 auto;
+	@include mq() {
+		padding: 0 rem(16);
+	}
+}
+
+.p-mv-thumbnail {
+	position: relative;
+	img {
+		width: 100%;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, .3);
+	}
+}
+
+.p-mv-thumbnail__info {
+	z-index: 2;
+	width: 90%;
+	position: absolute;
+	line-height: 2;
+	color: $white;
+	top: rem(36);
+	left: rem(36);
+	@include mq(sm) {
+		top: rem(12);
+		left: rem(12);
+		line-height: 1.5;
+	}
+	p {
+		font-size: rem(24);
+		letter-spacing: rem(4);
+		@include mq(sm) {
+			font-size: rem(16);
+			letter-spacing: rem(2);
+		}
+	}
+	ul {
+		display: flex;
+		margin-top: rem(16);
+		font-size: rem(16);
+		flex-wrap: wrap;
+		@include mq(sm) {
+			font-size: rem(14);
+			margin-top: rem(14);
+		}
+	}
+	li {
+		padding-right: rem(24);
+		@include mq(sm) {
+			padding-right: rem(16);
+		}
+	}
+}
+

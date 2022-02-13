@@ -1,0 +1,80 @@
+.p-about {
+	max-width: rem(700);
+	margin: 0 auto;
+}
+
+.p-about-title {
+	font-size: rem(24);
+	font-family: $en-font-family;
+	font-weight: bold;
+	text-align: center;
+}
+
+.p-about-content {
+	max-width: 700px;
+	margin: 0 auto;
+	@include mq(sm) {
+		max-width: 300px;
+	}
+}
+
+.p-about-content__logo {
+	text-align: center;
+	img {
+		width: 150px;
+		@include mq(sm) {
+			width: 100px;
+		}
+	}
+}
+
+.p-about-content__text {
+	line-height: 1.5;
+}
+
+.p-about-member {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: rem(2) solid $dark-gray;
+	border-radius: 5%;
+	padding: rem(24);
+	@include mq(sm) {
+		display: block;
+		border-radius: 1%;
+		text-align: center;
+	}
+}
+
+.p-about-member__img {
+	margin-right: rem(32);
+	width: 100%;
+	img {
+		width: 200px;
+	}
+}
+
+.p-about-member__name {
+	font-size: rem(24);
+	font-weight: bold;
+	text-align: center;
+}
+
+.p-about-member__attr {
+	line-height: 1.5;
+}
+
+.p-about-member__word , .p-about-member__part{
+	line-height: 1.5;
+	p {
+		font-weight: bold;
+	}
+	span {
+		font-size: rem(14);
+		font-weight: normal;
+	}
+}
+
+.p-about-member__fav {
+	line-height: 1.5;
+}

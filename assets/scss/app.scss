@@ -1,0 +1,38 @@
+//全てのSCSSをインポート
+//base
+@import 'base/_base';
+@import 'base/_reset';
+//setting
+@import 'setting/_breakpoints.scss';
+@import 'setting/_color.scss';
+@import 'setting/_typography.scss';
+@import 'setting/_zindex.scss';
+//function
+@import 'function/_convert-rem';
+@import 'function/_mediaquery';
+//layout
+@import 'layout/_footer.scss';
+@import 'layout/_header.scss';
+@import 'layout/_main.scss';
+//object
+//components
+@import 'object/components/_section';
+@import 'object/components/_button';
+@import 'object/components/_animation';
+@import 'object/components/_profile';
+@import 'object/components/_timeline';
+//project
+@import 'object/projects/_mv';
+@import 'object/projects/_single';
+@import 'object/projects/_nav';
+@import 'object/projects/_tags';
+@import 'object/projects/_contact';
+@import 'object/projects/_concept';
+@import 'object/projects/_about';
+@import 'object/projects/_news';
+//utility
+@import 'object/utility/_utility';
+//plugin
+@import 'plugin/_toc.scss';
+
+

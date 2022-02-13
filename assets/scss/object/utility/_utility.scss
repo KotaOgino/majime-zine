@@ -1,0 +1,89 @@
+.u-pc {
+	@include mq() {
+		display: none;
+	}
+}
+
+.u-sp {
+	display: none;
+	@include mq() {
+		display: block;
+	}
+}
+
+.u-flex {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.u-ta-c {
+	text-align: center;
+}
+
+.u-ta-l {
+	text-align: left;
+}
+
+.u-ta-r {
+	text-align: right;
+}
+
+.u-mt-16 {
+	margin-top: rem(16);
+}
+
+.u-mt-24 {
+	margin-top: rem(24);
+}
+
+.u-mt-32 {
+	margin-top: rem(32);
+}
+
+.u-mt-48 {
+	margin-top: rem(48);
+}
+
+.u-mb-8 {
+	margin-bottom: rem(8);
+}
+
+.u-mb-16 {
+	margin-bottom: rem(16);
+}
+
+.u-mb-24 {
+	margin-bottom: rem(24);
+}
+
+.u-mb-32 {
+	margin-bottom: rem(32);
+}
+
+.u-mb-48 {
+	margin-bottom: rem(48);
+	@include mq() {
+		margin-bottom: rem(36);
+	}
+}
+
+.u-mr-8 {
+	margin-right: rem(8);
+}
+
+.u-mr-16 {
+	margin-right: rem(16);
+}
+
+.u-mr-24 {
+	margin-right: rem(24);
+}
+
+.u-mr-32 {
+	margin-right: rem(36);
+}
+
+.u-mr-48 {
+	margin-right: rem(48);
+}

@@ -1,0 +1,48 @@
+.c-profile {
+	background: $white;
+	padding: rem(16);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	@include mq(sm) {
+		display: block;
+	}
+}
+
+.c-profile-avator {
+	@include mq(sm) {
+		text-align: center;
+		margin-bottom: rem(16);
+	}
+	img {
+		height: auto;
+	}
+}
+
+.c-profile-contents {
+	margin-left: rem(32);
+	@include mq(sm) {
+		margin-left: 0;
+	}
+}
+
+.c-profile-contents__name {
+	font-size: rem(24);
+	padding-bottom: rem(16);
+	border-bottom: rem(1.5) solid $light-gray;
+	@include mq(sm) {
+		font-size: rem(20);
+	}
+}
+
+.c-profile-contents__text {
+	padding-top: rem(16);
+	line-height: 1.5;
+	a {
+		padding-bottom: rem(2);
+		color: #2d6bc4;
+		border-bottom: 1px solid #2d6bc4
+		;
+	}
+}

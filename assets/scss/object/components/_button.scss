@@ -1,0 +1,43 @@
+.c-button-more{
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.c-button-more a{
+	font-family: $en-font-family;
+	font-weight: bold;
+	font-size: rem(24);
+	@include mq(sm) {
+		font-size: rem(20);
+	}
+}
+
+.c-button-more img{
+	width: rem(18);
+	height: auto;
+	@include mq(sm) {
+		width: rem(14);
+	}
+}
+
+.c-button-news {
+	width: 100%;
+	text-align: center;
+	a {
+		font-size: rem(18);
+		width: 300px;
+		border: rem(1) solid $black;
+		padding: rem(20);
+		display: inline-block;
+		font-family: $en-font-family;
+		font-weight: bold;
+		&:hover {
+			border-color: $light-gray;
+			background: $light-gray;
+			transition: .5s;
+		}
+	}
+}

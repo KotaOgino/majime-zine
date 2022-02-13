@@ -1,0 +1,12 @@
+.c-moveY {
+	animation: move-y 0.75s infinite alternate ease-in-out;
+	display: inline-block;
+}
+@keyframes move-y {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(rem(8));
+	}
+}

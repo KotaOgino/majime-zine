@@ -1,0 +1,104 @@
+.p-single {
+	background-color: $bg-main;
+	padding: rem(48);
+	@include mq() {
+		padding: rem(16);
+	}
+}
+
+.p-single-title h1 {
+	font-size: rem(24);
+	letter-spacing: rem(4);
+	line-height: 1.5;
+	font-weight: $bold;
+	@include mq() {
+		font-size: rem(20);
+		letter-spacing: rem(4);
+	}
+}
+
+.p-single-tags {
+	display: flex;
+}
+
+.p-single-tag {
+	color: $dark-gray;
+	margin-right: rem(12);
+}
+
+.p-single-time {
+	color: $dark-gray;
+}
+
+.p-single-thumbnail img{
+	width: 100%;
+}
+
+.p-single-content {
+	h2 {
+		font-size: rem(22);
+		font-weight: bold;
+		margin: rem(32) 0 rem(16);
+		padding: rem(8) rem(16);
+		border-left: solid rem(4) $black;
+		letter-spacing: rem(2);
+		@include mq() {
+			font-size: rem(20);
+		}
+	}
+	h3 {
+		font-size: rem(20);
+		font-weight: bold;
+		margin: rem(24) 0 rem(16);
+		letter-spacing: rem(2);
+		@include mq() {
+			font-size: rem(18);
+		}
+	}
+	h4 {
+		font-size: rem(18);
+		font-weight: bold;
+		margin: rem(18) 0 rem(16);
+		letter-spacing: rem(4);
+		@include mq() {
+			font-size: rem(16);
+		}
+	}
+	p {
+		padding: rem(10) 0;
+		line-height: 1.5;
+		letter-spacing: rem(2);
+	}
+	figure {
+		max-width: 100%;
+		margin: rem(32) 0;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		text-align: center;
+	}
+	figcaption {
+		text-align: center;
+		color: $dark-gray;
+	}
+	a {
+		padding-bottom: rem(2);
+		color: #2d6bc4;
+		border-bottom: 1px solid #2d6bc4;
+	}
+	blockquote {
+		background-color: #f5f5f5;
+		border-left: rem(5) solid $dark-gray;
+		border-radius: rem(4);
+		padding: rem(18);
+		cite {
+			font-size: rem(12);
+			color: #888;
+			font-style: normal;
+		}
+		p {
+			padding: 0 0 rem(8);
+		}
+	}
+}

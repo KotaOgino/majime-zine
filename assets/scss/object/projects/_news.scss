@@ -1,0 +1,30 @@
+.p-news {
+	display: flex;
+	justify-content: center;
+}
+
+.p-news-title {
+	padding: rem(16);
+	border-right: rem(1) solid $black;
+	p {
+		font-family: $en-font-family;
+		font-weight: bold;
+		font-size: rem(36);
+		@include mq() {
+			font-size: rem(20);
+		}
+	}
+}
+
+.p-news-lists {
+	padding: rem(16);
+}
+
+.p-news-lists__item {
+	padding: rem(16);
+	border-bottom: rem(1) solid $black;
+	line-height: 1.5;
+	time {
+		font-size: rem(12);
+	}
+}

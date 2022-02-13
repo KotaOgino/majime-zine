@@ -1,0 +1,20 @@
+.p-tags {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.p-tags-item {
+	font-size: rem(18);
+	cursor: pointer;
+	padding: rem(8) rem(16);
+	@include mq(sm) {
+		font-size: rem(16);
+	}
+}
+
+.p-tags > .active {
+	background-color: $black;
+	color: $white;
+}
