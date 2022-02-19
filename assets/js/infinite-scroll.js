@@ -3,7 +3,7 @@ let infinityScrollArchive = new InfiniteScroll(majimeZineArchive, {
 	append: '.c-section-grid3__item',             // 各記事の要素
     path: '.next_posts_link a',  // 次のページへのリンク要素を指定
     hideNav: '.next_posts_link', // 指定要素を非表示にする（ここは無くてもOK）
-    button: '.c-button-more a', // 記事を読み込むトリガーとなる要素を指定
+    button: '.c-button-more__archives a', // 記事を読み込むトリガーとなる要素を指定
     scrollThreshold: false,      // スクロールで読み込む：falseで機能停止（デフォルトはtrue）
     status: '.page-load-status', // ステータス部分の要素を指定
     history: 'false'

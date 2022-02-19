@@ -10,7 +10,7 @@ get_header();
 
 <section class="c-section">
 <ul class="p-tags u-mb-48">
-<li id="all" class="p-tags-item u-mr-8 active"><a href="<?php echo $home; ?>/articles">ALL</a></li>
+<li id="all" class="p-tags-item active"><a href="<?php echo $home; ?>/articles">ALL</a></li>
 <?php
 foreach($tags as $tag):
 $tag_link = get_tag_link($tag->term_id.'');

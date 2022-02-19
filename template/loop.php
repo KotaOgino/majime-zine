@@ -7,7 +7,7 @@ $args = array(
 );
 $the_query = new WP_Query($args);
 ?>
-<ul id="majimeZineArchive" class="c-section-grid3">
+<ul id="majimeZineArchive" class="c-section-grid3 u-mb-32">
 <?php
 if( $the_query->have_posts() ):
 while($the_query->have_posts()) : $the_query->the_post();
@@ -72,7 +72,7 @@ if ( $pages != 1 && $paged < $pages ):
 <?php next_posts_link( 'Older Entries', $the_query->max_num_pages );?>
 </span>
 
-<div class="c-button-more c-moveY">
+<div class="c-button-more c-button-more__archives c-moveY">
 <img class="u-mr-8" src="<?php echo $wp_url; ?>/assets/img/down-arrow.svg" alt="">
 <a>LOAD MORE</a>
 </div>

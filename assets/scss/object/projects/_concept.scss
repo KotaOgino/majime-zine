@@ -50,4 +50,8 @@
 
 .p-concept-en {
 	font-family: $en-font-family-text;
+	p {
+		letter-spacing: rem(1);
+	}
 }
+

@@ -33,6 +33,7 @@ wp_reset_postdata();
 </ul>
 </div>
 </div>
-<div class="c-button-news">
-<a href="<?php echo $home; ?>/archives/news/">MORE</a>
+<div class="c-button-more c-moveY">
+<img class="u-mr-8" src="<?php echo $wp_url; ?>/assets/img/down-arrow.svg" alt="">
+<a href="<?php echo $home; ?>/archives/news/">LOAD MORE</a>
 </div>
