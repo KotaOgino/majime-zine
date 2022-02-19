@@ -101,4 +101,28 @@
 			padding: 0 0 rem(8);
 		}
 	}
+	.p-single-interview {
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+	.p-single-interview__people {
+		width: 150px;
+		font-weight: bold;
+		padding-right: rem(24);
+		@include mq(sm) {
+			width: 100px;
+			padding-right: rem(16);
+		}
+	}
+	.p-single-interview__text {
+		width: 100%;
+		border-left: rem(1) $dark-gray solid;
+		padding-left: rem(24);
+		@include mq(sm) {
+			padding-left: rem(16);
+		}
+	}
 }
