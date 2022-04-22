@@ -30,5 +30,53 @@ $wp_url = get_template_directory_uri();
 </div>
 <?php wp_footer(); ?>
 </footer>
+<script>
+jQuery(function($){
+	let postId = '<?=get_the_ID()?>'
+	if($.cookie(postId) == 'good') {
+		$(document).ready(function(){
+			let icon = $('.c-button-heart__icon');
+			icon.addClass('on');
+			icon.addClass('c-button-heart__animation');
+		});
+	}
+
+	$(document).on('click','.good_button',function(){
+		let $target = $(this);
+		let icon = $('.c-button-heart__icon');
+		let text = $('.good_icon');
+		let count = Number($target.find('.good_counter').html())+1;
+		let targetId = $target.data('id');
+		if($.cookie(targetId) != 'good') {
+			if(icon.hasClass('on')) {
+				icon.removeClass('on');
+				text.removeClass('off');
+				icon.removeClass("c-button-heart__animation");
+				icon.css("background-position","left");
+			} else {
+				icon.addClass('on');
+				text.addClass('on');
+				icon.addClass('c-button-heart__animation');
+			}
+			jQuery.ajax({
+				url: '<?=admin_url('admin-ajax.php')?>',
+				type: 'POST',
+				data: {
+				'action' : 'count_up',
+				'postID' : targetId
+			},
+			success: function(data) {
+				$('.good_counter').html(count);
+				$.cookie(targetId, 'good');
+				console.log('thanks!');
+			}
+			});
+			return false;
+		} else {
+			console.log('You already touched button! thanks!');
+		}
+	});
+});
+</script>
 </body>
 </html>

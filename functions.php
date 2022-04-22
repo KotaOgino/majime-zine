@@ -63,14 +63,15 @@ add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 // JS・CSSファイルを読み込む
 function add_files() {
 	// WordPress提供のjquery.jsを読み込まない
-	if (!is_admin()) {
-        wp_deregister_script('jquery');
-    }
+	// if (!is_admin()) {
+    //     wp_deregister_script('jquery');
+    // }
 	// infinitie JS
 	wp_enqueue_script( 'infinite-scroll', get_template_directory_uri() . '/assets/js/plugin/infinite-scroll.pkgd.min.js', array(), false, false );
 	// サイト共通JS
 	wp_enqueue_script( 'smart-script', get_template_directory_uri() . '/lib/bundle.js', array(), false, true );
-
+	// jQuery.cookie
+	wp_enqueue_script( 'infinite-scroll', get_template_directory_uri() . '/assets/js/plugin/jquery.cookie.js', array(), false, false );
 	// サイト共通のCSSの読み込み
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/lib/style.css', "", '' );
 }
@@ -82,17 +83,17 @@ remove_filter('pre_user_description', 'wp_filter_kses');
 define('PAGE_1ST', 4);  //１ページ目の記事数
 define('PAGE_2ND', get_option( 'posts_per_page' )); //２ページ目の記事数
 function change_posts_paging( $query ) {
-  if ( is_admin() || !is_front_page() ){
-    return; //フロントページでのみ動作
-  }
-  //現在のページを取得
-  $paged = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-  if ($paged >= 2){ //２ページ目以降の時
-    $query->set('offset', PAGE_1ST + PAGE_2ND*($paged-2));
-    $query->set( 'posts_per_page', PAGE_2ND);
-  }else {   //１ページ目の時
-    $query->set( 'posts_per_page', PAGE_1ST );
-  }
+	if ( is_admin() || !is_front_page() ){
+		return; //フロントページでのみ動作
+	}
+	//現在のページを取得
+	$paged = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+	if ($paged >= 2){ //２ページ目以降の時
+		$query->set('offset', PAGE_1ST + PAGE_2ND*($paged-2));
+		$query->set( 'posts_per_page', PAGE_2ND);
+	}else {   //１ページ目の時
+		$query->set( 'posts_per_page', PAGE_1ST );
+	}
 }
 add_action( 'pre_get_posts', 'change_posts_paging' );
 
@@ -107,3 +108,20 @@ function found_offset( $found_posts, $query ) {
     return $found_posts;
 }
 add_action( 'found_posts', 'found_offset', 10, 2 );
+
+// いいねカウンター
+function count_up(){
+	$postID = $_POST['postID'];
+	$count = get_field('good_counter',$postID);
+	update_post_meta( $postID, 'good_counter', $count + 1, $count );
+	die();
+}
+add_action( 'wp_ajax_count_up', 'count_up' );
+add_action( 'wp_ajax_nopriv_count_up', 'count_up' );
+
+// Public Post Previewで発行された外部確認用URLの有効期限延長
+add_filter( 'ppp_nonce_life', 'my_nonce_life' );
+function my_nonce_life() {
+ //7日に延長
+    return 60 * 60 * 24 * 7;
+}

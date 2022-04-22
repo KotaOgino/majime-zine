@@ -14,16 +14,44 @@
 	@include mq() {
 		font-size: rem(20);
 		letter-spacing: rem(4);
+		line-height: 1.3;
 	}
 }
 
 .p-single-tags {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .p-single-tag {
 	color: $dark-gray;
 	margin-right: rem(12);
+	font-size: rem(18);
+	&:hover {
+		color: $black;
+		transition: .5s;
+	}
+	@include mq(sm) {
+		font-size: rem(14);
+	}
+}
+
+.p-single-tag__button {
+	color: $black;
+	border: rem(1) solid $black;
+	border-radius: 3%;
+	padding: rem(8) rem(16);
+	font-size: rem(14);
+	&:hover {
+		transition: .5s;
+		background-color: $light-gray;
+		border-color: $light-gray;
+	}
+	@include mq(sm) {
+		font-size: rem(10);
+		padding: rem(6) rem(12);
+		margin-bottom: rem(12);
+	}
 }
 
 .p-single-time {
@@ -92,6 +120,7 @@
 		border-left: rem(5) solid $dark-gray;
 		border-radius: rem(4);
 		padding: rem(18);
+		margin: rem(16) 0;
 		cite {
 			font-size: rem(12);
 			color: #888;
@@ -99,6 +128,9 @@
 		}
 		p {
 			padding: 0 0 rem(8);
+		}
+		@include mq(sm) {
+			margin: rem(10) 0;
 		}
 	}
 	.p-single-interview {
@@ -110,11 +142,10 @@
 	}
 	.p-single-interview__people {
 		width: 150px;
-		font-weight: bold;
 		padding-right: rem(24);
 		@include mq(sm) {
 			width: 100px;
-			padding-right: rem(16);
+			padding-right: rem(8);
 		}
 	}
 	.p-single-interview__text {
@@ -124,5 +155,8 @@
 		@include mq(sm) {
 			padding-left: rem(16);
 		}
+	}
+	.dark-gray {
+		color: $dark-gray;
 	}
 }

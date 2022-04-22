@@ -29,7 +29,7 @@ $img = $wp_url.'/assets/img/no-image.png';
 $thumbnail = '<img src='.$img.' alt="'.$title.'">';
 ?>
 <?php if($tags): ?>
-<li class="c-section-grid3__item">
+<li class="c-section-grid3__item u-fadeIn">
 <?php else: ?>
 <li class="c-section-grid3__item">
 <?php endif; ?>

@@ -30,7 +30,7 @@ $img = $wp_url.'/assets/img/no-image.png';
 }
 $thumbnail = '<img src='.$img.' alt="'.$title.'">';
 ?>
-<article class="c-section-grid__item">
+<article class="c-section-grid__item u-fadeIn">
 <a href="<?php echo $permalink; ?>">
 
 <div class="c-section-grid__item-thumbnail u-mb-24">
@@ -82,9 +82,10 @@ if ( $pages != 1 && $paged < $pages ):
 <img class="u-mr-8" src="<?php echo $wp_url; ?>/assets/img/down-arrow.svg" alt="">
 <a>LOAD MORE</a>
 </div>
+
 <div class="page-load-status-latest" style="display:none;">
-<div class="infinite-scroll-request">ロード中</div>
-<p class="infinite-scroll-last">これ以上は記事がありません</p>
+<div class="infinite-scroll-request"><img src="<?php echo $wp_url; ?>/assets/img/loadingGif.gif" alt=""></div>
+<!-- <p class="infinite-scroll-last">これ以上は記事がありません</p> -->
 <p class="infinite-scroll-error">読み込むページがありません</p>
 </div>
 <?php endif; ?>

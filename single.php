@@ -50,11 +50,11 @@ $img = get_the_post_thumbnail_url($post_id);
 <?php endif; ?>
 
 <div class="p-single-time u-mb-48">
-<time class="uk-margin-right" datetime="<?php the_time('Y-m-d'); ?>"><span class="uk-margin-small-right" uk-icon="history"></span><?php the_time('Y.m.d'); ?></time>
+<time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time>
 </div>
 
 <?php if ($img != ''): ?>
-<div class="p-single-thumbnail u-mb-48">
+<div class="p-single-thumbnail u-mb-48 u-fadeIn">
 <img src="<?php echo $img; ?>" alt="<?php echo $title; ?>">
 </div>
 <?php endif; ?>
@@ -62,7 +62,26 @@ $img = get_the_post_thumbnail_url($post_id);
 <div class="p-single-content">
 <?php the_content(); ?>
 </div>
+<div class="c-button-heart good_button u-mb-16 u-mt-32" data-id="<?=$post->ID?>">
+<div class="c-button-heart__icon"></div>
+<div class="good_counter">
+<?php the_field('good_counter') ?>
+</div>
+<div class="good_text">
+ いいね
+</div>
+</div>
+<?php if($tags): ?>
+<ul class="p-single-tags u-mb-32">
+<?php foreach($tags as $tag): ?>
+<a href="<?php echo get_tag_link($tag->term_id); ?>">
+<li class="p-single-tag p-single-tag__button">#<?php echo $tag->name; ?></li>
+</a>
+<?php endforeach; ?>
+</ul>
+<?php endif; ?>
 <?php get_template_part('template/profile'); ?>
+
 </article>
 <?php 
 endwhile;
@@ -104,8 +123,8 @@ $relatedThumbnail = '<img src='.$relatedImg.' alt="'.$relatedTitle.'">';
 <?php if($tags): ?>
 <div class="c-section-grid3__item-tag u-mb-16">
 <ul class="u-flex">
-<?php foreach($tags as $tag): ?>
-<li class="u-mr-8">#<?php echo $tag->name; ?></li>
+<?php foreach($relatedTags as $relatedTag): ?>
+<li class="u-mr-8">#<?php echo $relatedTag->name; ?></li>
 <?php endforeach; ?>
 </ul>
 </div>

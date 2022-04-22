@@ -73,6 +73,11 @@
 		padding: rem(20);
 		background-color: $dark-gray;
 		border-radius: 10%;
+		transition: .5s;
+		&:hover {
+			background-color: $black;
+			transition: .5s;
+		}
 	}
 
 	.wpcf7-spinner {

@@ -41,3 +41,51 @@
 		}
 	}
 }
+
+.c-button-heart {
+	// position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.on ~ .good_counter {
+	color: #ea3f60;
+}
+
+.on ~ .good_text {
+	color: #ea3f60;
+}
+
+.c-button-heart__icon {
+	cursor: pointer;
+	// position: absolute;
+	// left: -48px;
+	background: url("../assets/img/web_heart_animation.png");
+	background-position: left;
+	background-size: 2900%;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+}
+
+@keyframes heartBlast {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}
+
+.c-button-heart__animation {
+	display: inline-block;
+	background-position: right;
+	-webkit-animation-name: heartBlast;
+	animation-name: heartBlast;
+	-webkit-animation-duration: .8s;
+	animation-duration: .8s;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	-webkit-animation-timing-function: steps(28);
+	animation-timing-function: steps(28);
+}

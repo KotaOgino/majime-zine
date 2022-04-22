@@ -27,7 +27,7 @@ $img = $wp_url.'/assets/img/no-image.png';
 }
 $thumbnail = '<img src='.$img.' alt="'.$title.'">';
 ?>
-<article class="c-section-grid3__item">
+<article class="c-section-grid3__item u-fadeIn">
 <a href="<?php echo $permalink; ?>">
 
 <div class="c-section-grid3__item-thumbnail u-mb-16">
