@@ -13,4 +13,9 @@ const mvSwiper = new Swiper('.swiper-container', {
 		disableOnInteraction: false,
 	},
 	speed: 2000,
+	pagination: {
+		el: '.swiper-pagination',
+		type: 'bullets',
+		clickable: true,
+	},
 })

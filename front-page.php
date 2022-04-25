@@ -51,6 +51,7 @@ endif;
 
 <div class="swiper-pagination"></div>
 </div>
+</div>
 </section>
 <section class="c-section u-mb-48">
 <p class="c-section-title u-mb-32">LATEST ARTICLES</p>
