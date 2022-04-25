@@ -1,0 +1,22 @@
+.swiper-pagination {
+	position: relative!important;
+	margin-top: rem(24);
+}
+
+.swiper-pagination-bullet {
+	border-radius: rem(5)!important;
+	margin: 0 rem(8)!important;
+	width: rem(60)!important;
+	height: rem(5)!important;
+	background: $black!important;
+	opacity: 0.19;
+	@include mq(sm) {
+		width: rem(40)!important;
+		margin: 0 rem(5)!important;
+	}
+}
+
+.swiper-pagination-bullet-active {
+	background: $black!important;
+	opacity: 1;
+}
