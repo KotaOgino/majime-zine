@@ -16,6 +16,12 @@ function custom_login_logo() {
 }
 add_action( 'login_head', 'custom_login_logo' );
 
+//Admin画面のロゴの遷移先をHPに変更
+function custom_login_logo_url() {
+	return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'custom_login_logo_url' );
+
 //author情報からユーザー名の特定防止
 function disable_author_archive_query() {
 	if( preg_match('/author=([0-9]*)/i', $_SERVER['QUERY_STRING']) ){
