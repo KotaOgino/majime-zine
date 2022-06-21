@@ -1,4 +1,21 @@
 <?php
+//Admin画面　ロゴ変更
+function custom_login_logo() {
+?>
+<style type="text/css">
+	#login h1 a {
+		display: block;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-image: url(https://majime-zine.com/wp-content/uploads/2022/02/F5440BE8-6659-4669-8405-4D96CDE99588.png);
+		width: 100px;
+		height: 100px;
+	}
+</style>
+<?php
+}
+add_action( 'login_head', 'custom_login_logo' );
+
 //author情報からユーザー名の特定防止
 function disable_author_archive_query() {
 	if( preg_match('/author=([0-9]*)/i', $_SERVER['QUERY_STRING']) ){
